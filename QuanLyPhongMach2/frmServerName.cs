@@ -11,6 +11,7 @@ namespace QuanLyPhongMach2
             InitializeComponent();
             btnSet.Enabled = false;
             btnTest.Focus();
+            txtServer.Text = Environment.MachineName;
         }
 
         private void btnTest_Click(object sender, EventArgs e)

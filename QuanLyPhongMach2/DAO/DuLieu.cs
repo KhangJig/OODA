@@ -12,7 +12,7 @@ namespace QuanLyPhongMach2.DAO
     public class DuLieu
     {
         SqlConnection conn;
-        public static string constring = "Data Source=.\\;Initial Catalog=QLPM;Integrated Security=True";
+        public static string constring = "Data Source="+ Environment.MachineName +";Initial Catalog=QLPM;Integrated Security=True";
 
         public bool MoKetNoi()
         {
