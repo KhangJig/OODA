@@ -1,11 +1,9 @@
-﻿using System;
+﻿using QuanLyPhongMach2.DTO;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Data;
-using QuanLyPhongMach2.DTO;
 
 namespace QuanLyPhongMach2.DAO
 {

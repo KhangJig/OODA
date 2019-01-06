@@ -2,12 +2,7 @@
 using QuanLyPhongMach2.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyPhongMach2
@@ -144,7 +139,12 @@ namespace QuanLyPhongMach2
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.MaximizeBox = false;
             frm.MinimizeBox = false;
+            frm.FormClosing += new FormClosingEventHandler(ChildFormClosing);
             frm.ShowDialog();
+        }
+        private void ChildFormClosing(object sender, FormClosingEventArgs e)
+        {
+            LoadData();
         }
 
         private void btnXoaThuoc_Click(object sender, EventArgs e)

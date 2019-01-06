@@ -35,7 +35,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -95,7 +94,6 @@
             this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Controls.Add(this.btnThoat);
-            this.groupBox2.Controls.Add(this.btnXoa);
             this.groupBox2.Controls.Add(this.btnThem);
             this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -112,11 +110,11 @@
             this.btnHuy.BackColor = System.Drawing.SystemColors.Control;
             this.btnHuy.ForeColor = System.Drawing.Color.Black;
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(41, 126);
+            this.btnHuy.Location = new System.Drawing.Point(43, 34);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(140, 27);
             this.btnHuy.TabIndex = 7;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "Xoá Trắng";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
@@ -125,7 +123,7 @@
             this.btnThoat.BackColor = System.Drawing.SystemColors.Control;
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(41, 158);
+            this.btnThoat.Location = new System.Drawing.Point(43, 154);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(140, 27);
             this.btnThoat.TabIndex = 8;
@@ -133,25 +131,12 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.Control;
-            this.btnXoa.ForeColor = System.Drawing.Color.Black;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(41, 59);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(140, 27);
-            this.btnXoa.TabIndex = 5;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = false;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
             // btnThem
             // 
             this.btnThem.BackColor = System.Drawing.SystemColors.Control;
             this.btnThem.ForeColor = System.Drawing.Color.Black;
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(41, 26);
+            this.btnThem.Location = new System.Drawing.Point(43, 67);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(140, 27);
             this.btnThem.TabIndex = 4;
@@ -164,7 +149,7 @@
             this.btnSua.BackColor = System.Drawing.SystemColors.Control;
             this.btnSua.ForeColor = System.Drawing.Color.Black;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(41, 94);
+            this.btnSua.Location = new System.Drawing.Point(43, 100);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(140, 27);
             this.btnSua.TabIndex = 6;
@@ -292,8 +277,10 @@
             this.dgvDSThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDSThuoc.Location = new System.Drawing.Point(3, 22);
             this.dgvDSThuoc.Name = "dgvDSThuoc";
+            this.dgvDSThuoc.ReadOnly = true;
             this.dgvDSThuoc.Size = new System.Drawing.Size(796, 209);
             this.dgvDSThuoc.TabIndex = 0;
+            this.dgvDSThuoc.CurrentCellChanged += new System.EventHandler(this.dgvDSThuoc_CurrentCellChanged);
             // 
             // frmQuanLyThuoc
             // 
@@ -327,7 +314,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.GroupBox groupBox3;

@@ -43,9 +43,9 @@
             this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(474, 25);
+            this.label1.Size = new System.Drawing.Size(505, 25);
             this.label1.TabIndex = 1;
-            this.label1.Text = "PHÂN TÍCH THIẾT KẾ HỆ THỐNG THÔNG TIN\r\n";
+            this.label1.Text = "PP PHÁT TRIỂN PHẦN MỀM HƯỚNG ĐỐI TƯỢNG";
             // 
             // label2
             // 
@@ -55,10 +55,9 @@
             this.label2.Location = new System.Drawing.Point(58, 94);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(289, 60);
+            this.label2.Size = new System.Drawing.Size(216, 60);
             this.label2.TabIndex = 2;
-            this.label2.Text = "LỚP IS201.I25\r\nGV LT :         Nguyễn Đình Loan Phương\r\nGV TH :        Nguyễn Hồ " +
-    "Duy Trí";
+            this.label2.Text = "LỚP SE100.J11\r\nGV LT :         Phạm Thi Vương\r\nGV TH :        Trần Hạnh Xuân";
             // 
             // label3
             // 
@@ -68,9 +67,10 @@
             this.label3.Location = new System.Drawing.Point(58, 163);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(322, 100);
+            this.label3.Size = new System.Drawing.Size(322, 60);
             this.label3.TabIndex = 2;
-            this.label3.Text = resources.GetString("label3.Text");
+            this.label3.Text = "Nhóm 16:   \r\n                    15520328   -      Nguyễn Đức Kế\r\n               " +
+    "     15520338   -      Lê Dương Khang";
             // 
             // label4
             // 

@@ -57,7 +57,6 @@ namespace QuanLyPhongMach2
                     lblThongBao.Text = "Thêm thuốc thành công";
                     tb.stt(lblThongBao);
 
-
                     txtSoLuong.Text = "";
                     txtCachDung.Text = "";
 

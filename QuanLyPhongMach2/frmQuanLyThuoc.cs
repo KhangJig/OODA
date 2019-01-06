@@ -32,12 +32,12 @@ namespace QuanLyPhongMach2
 
             if(dgvDSThuoc.RowCount<1)
             {
-                btnXoa.Enabled = false;
+                //btnXoa.Enabled = false;
                 btnSua.Enabled = false;
             }
             else
             {
-                btnXoa.Enabled = true;
+                //btnXoa.Enabled = true;
                 btnSua.Enabled = true;
             }
 
@@ -102,28 +102,28 @@ namespace QuanLyPhongMach2
             }
         }
 
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            var tb = new HideNotifications();
-            try
-            {
-                int MaThuoc = (int)dgvDSThuoc["MaThuoc", dgvDSThuoc.CurrentCell.RowIndex].Value;
-                if (MessageBox.Show("Bạn có chắc muốn xóa loại thuốc này không. Nếu xóa, tất cả những đơn thuốc có liên quan đến loại thuốc này sẽ bị xóa hết", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    Thuoc.XoaThuoc(MaThuoc);
-                    LoadData();
+        //private void btnXoa_Click(object sender, EventArgs e)
+        //{
+        //    var tb = new HideNotifications();
+        //    try
+        //    {
+        //        int MaThuoc = (int)dgvDSThuoc["MaThuoc", dgvDSThuoc.CurrentCell.RowIndex].Value;
+        //        if (MessageBox.Show("Bạn có chắc muốn xóa loại thuốc này không. Nếu xóa, tất cả những đơn thuốc có liên quan đến loại thuốc này sẽ bị xóa hết", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == System.Windows.Forms.DialogResult.Yes)
+        //        {
+        //            Thuoc.XoaThuoc(MaThuoc);
+        //            LoadData();
 
-                    lblThongBao.ForeColor = Color.Green;
-                    lblThongBao.Text = "Xoá thành công!";
-                    tb.stt(lblThongBao);
-                }
-            }
-            catch
-            {
-                lblThongBao.Text = "Xóa bị lỗi";
-                tb.stt(lblThongBao);
-            }
-        }
+        //            lblThongBao.ForeColor = Color.Green;
+        //            lblThongBao.Text = "Xoá thành công!";
+        //            tb.stt(lblThongBao);
+        //        }
+        //    }
+        //    catch
+        //    {
+        //        lblThongBao.Text = "Xóa bị lỗi";
+        //        tb.stt(lblThongBao);
+        //    }
+        //}
 
         private void btnSua_Click(object sender, EventArgs e)
         {
@@ -168,5 +168,19 @@ namespace QuanLyPhongMach2
             this.Close();
         }
         #endregion
+
+        private void dgvDSThuoc_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = dgvDSThuoc.CurrentCell.RowIndex;
+                txtTenThuoc.Text = dgvDSThuoc["TenThuoc", a].Value.ToString();
+                cbxDonVi.Text = dgvDSThuoc["DonVi", a].Value.ToString();
+                numDonGia.Value = decimal.Parse(dgvDSThuoc["DonGia", a].Value.ToString());
+            }
+            catch
+            {
+            }
+        }
     }
 }

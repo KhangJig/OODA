@@ -1,12 +1,7 @@
 ﻿using QuanLyPhongMach2.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyPhongMach2
@@ -192,11 +187,11 @@ namespace QuanLyPhongMach2
             dgvDSBenhNhan.Columns["GioiTinh"].Width = 100;
             dgvDSBenhNhan.Columns["Ngaysinh"].Width = 100;
             dgvDSBenhNhan.Columns["DiaChi"].Width = 400;
-            
+
             if (/*DateTime.Compare(DateTime.Now, dtpNgayKham.Value) == 0*/DateTime.Now.Day == dtpNgayKham.Value.Day && DateTime.Now.Month == dtpNgayKham.Value.Month && DateTime.Now.Year == dtpNgayKham.Value.Year)
             {
                 btnThem.Enabled = true;
-                
+
                 if (dgvDSBenhNhan.RowCount < 1)// nếu không có bệnh nhân nào thì không cho click nút xoá,sửa
                 {
                     btnXoa.Enabled = false;

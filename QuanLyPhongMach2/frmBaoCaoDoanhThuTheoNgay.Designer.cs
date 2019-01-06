@@ -183,7 +183,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmBaoCaoDoanhThuTheoNgay";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Báo cáo doanh thu theo ngày";
+            this.Text = "Báo cáo doanh thu";
             this.Load += new System.EventHandler(this.frmBCDoanhThuTheoNgay_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

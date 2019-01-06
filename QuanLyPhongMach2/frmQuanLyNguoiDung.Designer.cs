@@ -86,18 +86,18 @@
             // btnHuy
             // 
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(30, 135);
+            this.btnHuy.Location = new System.Drawing.Point(30, 29);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(140, 27);
             this.btnHuy.TabIndex = 12;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "Xoá Trắng";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(30, 167);
+            this.btnThoat.Location = new System.Drawing.Point(30, 165);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(140, 27);
             this.btnThoat.TabIndex = 13;
@@ -108,7 +108,7 @@
             // btnXoa
             // 
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(30, 68);
+            this.btnXoa.Location = new System.Drawing.Point(30, 97);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(140, 27);
             this.btnXoa.TabIndex = 10;
@@ -119,7 +119,7 @@
             // btnThem
             // 
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(30, 35);
+            this.btnThem.Location = new System.Drawing.Point(30, 63);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(140, 27);
             this.btnThem.TabIndex = 9;
@@ -130,7 +130,7 @@
             // btnSua
             // 
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(30, 103);
+            this.btnSua.Location = new System.Drawing.Point(30, 131);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(140, 27);
             this.btnSua.TabIndex = 11;

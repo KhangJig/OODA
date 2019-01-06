@@ -126,13 +126,6 @@
   <metadata name="label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Nhóm 2 :   
-                    15520328   -      Nguyễn Đức Kế
-                    15520338   -      Lê Dương Khang
-                    15520540   -      Lê Hiếu Nghĩa 
-                    16521287   -      Nguyễn VănTrí</value>
-  </data>
   <metadata name="label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
