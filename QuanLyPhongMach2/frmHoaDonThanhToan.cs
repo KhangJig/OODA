@@ -1,4 +1,5 @@
-﻿using QuanLyPhongMach2.DAO;
+﻿using DevExpress.XtraReports.UI;
+using QuanLyPhongMach2.DAO;
 using QuanLyPhongMach2.DTO;
 using System;
 using System.Collections.Generic;
@@ -114,6 +115,42 @@ namespace QuanLyPhongMach2
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnInHoaDon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rptHoaDonThanhToan report = new rptHoaDonThanhToan();
+                //ChiTietHoaDon chiTietHoaDon = new ChiTietHoaDon();
+                //chiTietHoaDon = HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK);
+                //report.DataSource = chiTietHoaDon;
+                //report.DataSource = HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK);
+
+                //report.BinData();
+                //report.DataSource = null;
+                string TrieuChung;
+                string LoaiBenh;
+                //rptHoaDonThanhToan report2 = new rptHoaDonThanhToan();
+                PhieuKham.LayDuLieu(frmPhieuKhamBenh.MaPK, out LoaiBenh, out TrieuChung);
+                //ChiTietPhieuKham chiTietPhieuKham = new ChiTietPhieuKham(1, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).TenBN, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).NgayKham, LoaiBenh, TrieuChung);
+                //report.DataSource = chiTietPhieuKham;
+                //private BindingList<ChiTietToaThuoc> chiTietToaThuocs=new BindingList<ChiTietToaThuoc>(ToaThuoc.LayChiTietDonThuoc(frmPhieuKhamBenh.MaPK));
+                //report.DataSource = chiTietToaThuoc;
+                TongHopHoaDonChiTiet tongHopHoaDonChiTiet = new TongHopHoaDonChiTiet(HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).TenBN, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).NgayKham, TrieuChung, LoaiBenh, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).TienKham, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).TienThuoc);
+                report.DataSource = tongHopHoaDonChiTiet;
+                report.BinData();
+                ReportPrintTool tool = new ReportPrintTool(report);
+                report.ShowPreviewDialog();
+
+                //TongHopHoaDonChiTiet tongHopHoaDonChiTiet = new TongHopHoaDonChiTiet(HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).TenBN, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).NgayKham, TrieuChung, LoaiBenh, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).TienKham, HoaDon.LayHoaDon(frmPhieuKhamBenh.MaPK).TienThuoc, ToaThuoc.LayChiTietDonThuoc(frmPhieuKhamBenh.MaPK)[2], ToaThuoc.LayChiTietDonThuoc(frmPhieuKhamBenh.MaPK)[3], ToaThuoc.LayChiTietDonThuoc(frmPhieuKhamBenh.MaPK)[4], ToaThuoc.LayChiTietDonThuoc(frmPhieuKhamBenh.MaPK)[5]);
+            }
+            catch
+            {
+                var tb = new HideNotifications();
+                lblThongBao.Text = "Không thể in hoá đơn";
+                tb.stt(lblThongBao);
+            }
         }
         #endregion
     }

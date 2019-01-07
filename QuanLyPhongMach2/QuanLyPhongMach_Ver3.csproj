@@ -54,6 +54,7 @@
     <Reference Include="DevExpress.SpellChecker.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v18.2.UI, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v18.2.Extensions, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -113,6 +114,7 @@
     <Compile Include="DTO\ChiTietPhieuKham.cs" />
     <Compile Include="DTO\ChiTietThuoc.cs" />
     <Compile Include="DTO\ChiTietToaThuoc.cs" />
+    <Compile Include="DTO\TongHopHoaDonChiTiet.cs" />
     <Compile Include="frmBaoCaoDoanhThuTheoThang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +229,12 @@
     <Compile Include="rptBaoCaoSuDungThuoc.Designer.cs">
       <DependentUpon>rptBaoCaoSuDungThuoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptHoaDonThanhToan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptHoaDonThanhToan.Designer.cs">
+      <DependentUpon>rptHoaDonThanhToan.cs</DependentUpon>
+    </Compile>
     <Compile Include="StandardWord.cs" />
     <EmbeddedResource Include="frmBaoCaoDoanhThuTheoThang.resx">
       <DependentUpon>frmBaoCaoDoanhThuTheoThang.cs</DependentUpon>
@@ -282,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rptBaoCaoSuDungThuoc.resx">
       <DependentUpon>rptBaoCaoSuDungThuoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptHoaDonThanhToan.resx">
+      <DependentUpon>rptHoaDonThanhToan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
