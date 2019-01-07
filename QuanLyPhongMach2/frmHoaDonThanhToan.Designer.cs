@@ -45,6 +45,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnInHoaDon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             this.panel1.Controls.Add(this.lblSum);
             this.panel1.Controls.Add(this.txtSum);
             this.panel1.Controls.Add(this.lblThongBao);
+            this.panel1.Controls.Add(this.btnInHoaDon);
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnLuu);
             this.panel1.Controls.Add(this.dtpNgayKham);
@@ -104,7 +106,7 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(473, 282);
+            this.btnThoat.Location = new System.Drawing.Point(362, 280);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(98, 28);
             this.btnThoat.TabIndex = 8;
@@ -115,7 +117,7 @@
             // btnLuu
             // 
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(293, 282);
+            this.btnLuu.Location = new System.Drawing.Point(182, 280);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(98, 28);
             this.btnLuu.TabIndex = 7;
@@ -226,6 +228,17 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "HOÁ ĐƠN THANH TOÁN";
             // 
+            // btnInHoaDon
+            // 
+            this.btnInHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInHoaDon.Location = new System.Drawing.Point(542, 280);
+            this.btnInHoaDon.Name = "btnInHoaDon";
+            this.btnInHoaDon.Size = new System.Drawing.Size(98, 28);
+            this.btnInHoaDon.TabIndex = 9;
+            this.btnInHoaDon.Text = "In hoá đơn";
+            this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
+            // 
             // frmHoaDonThanhToan
             // 
             this.AcceptButton = this.btnLuu;
@@ -263,5 +276,6 @@
         private System.Windows.Forms.Label lblThongBao;
         private System.Windows.Forms.TextBox txtSum;
         private System.Windows.Forms.Label lblSum;
+        private System.Windows.Forms.Button btnInHoaDon;
     }
 }
