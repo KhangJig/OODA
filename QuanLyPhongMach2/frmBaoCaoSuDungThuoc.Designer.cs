@@ -38,6 +38,7 @@
             this.label_firstday = new System.Windows.Forms.Label();
             this.grbBaoCaoSuDungThuoc = new System.Windows.Forms.GroupBox();
             this.dgvDSThuoc = new System.Windows.Forms.DataGridView();
+            this.lblThongBao = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numNam)).BeginInit();
             this.grbBaoCaoSuDungThuoc.SuspendLayout();
@@ -46,6 +47,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblThongBao);
             this.panel1.Controls.Add(this.cbxThang);
             this.panel1.Controls.Add(this.numNam);
             this.panel1.Controls.Add(this.btnXemBaoCao);
@@ -55,7 +57,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(744, 125);
+            this.panel1.Size = new System.Drawing.Size(744, 165);
             this.panel1.TabIndex = 3;
             // 
             // cbxThang
@@ -85,11 +87,6 @@
             // numNam
             // 
             this.numNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numNam.Increment = new decimal(new int[] {
-            2017,
-            0,
-            0,
-            0});
             this.numNam.Location = new System.Drawing.Point(337, 70);
             this.numNam.Maximum = new decimal(new int[] {
             3000,
@@ -105,11 +102,12 @@
             this.numNam.Size = new System.Drawing.Size(78, 26);
             this.numNam.TabIndex = 2;
             this.numNam.Value = new decimal(new int[] {
-            2017,
+            2019,
             0,
             0,
             0});
             this.numNam.ValueChanged += new System.EventHandler(this.numNam_ValueChanged);
+            this.numNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numNam_KeyPress);
             // 
             // btnXemBaoCao
             // 
@@ -157,9 +155,9 @@
             this.grbBaoCaoSuDungThuoc.Controls.Add(this.dgvDSThuoc);
             this.grbBaoCaoSuDungThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grbBaoCaoSuDungThuoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbBaoCaoSuDungThuoc.Location = new System.Drawing.Point(0, 125);
+            this.grbBaoCaoSuDungThuoc.Location = new System.Drawing.Point(0, 165);
             this.grbBaoCaoSuDungThuoc.Name = "grbBaoCaoSuDungThuoc";
-            this.grbBaoCaoSuDungThuoc.Size = new System.Drawing.Size(744, 336);
+            this.grbBaoCaoSuDungThuoc.Size = new System.Drawing.Size(744, 296);
             this.grbBaoCaoSuDungThuoc.TabIndex = 4;
             this.grbBaoCaoSuDungThuoc.TabStop = false;
             this.grbBaoCaoSuDungThuoc.Text = "Danh sách thuốc sử dụng";
@@ -171,8 +169,19 @@
             this.dgvDSThuoc.Location = new System.Drawing.Point(3, 22);
             this.dgvDSThuoc.Name = "dgvDSThuoc";
             this.dgvDSThuoc.ReadOnly = true;
-            this.dgvDSThuoc.Size = new System.Drawing.Size(738, 311);
+            this.dgvDSThuoc.Size = new System.Drawing.Size(738, 271);
             this.dgvDSThuoc.TabIndex = 1;
+            // 
+            // lblThongBao
+            // 
+            this.lblThongBao.AutoSize = true;
+            this.lblThongBao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThongBao.ForeColor = System.Drawing.Color.Red;
+            this.lblThongBao.Location = new System.Drawing.Point(297, 122);
+            this.lblThongBao.Name = "lblThongBao";
+            this.lblThongBao.Size = new System.Drawing.Size(14, 20);
+            this.lblThongBao.TabIndex = 12;
+            this.lblThongBao.Text = "|";
             // 
             // frmBaoCaoSuDungThuoc
             // 
@@ -208,5 +217,6 @@
         private System.Windows.Forms.GroupBox grbBaoCaoSuDungThuoc;
         private System.Windows.Forms.DataGridView dgvDSThuoc;
         private System.Windows.Forms.ComboBox cbxThang;
+        private System.Windows.Forms.Label lblThongBao;
     }
 }

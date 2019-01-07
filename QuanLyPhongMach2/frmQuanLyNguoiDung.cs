@@ -1,4 +1,5 @@
 ﻿using QuanLyPhongMach2.DAO;
+using QuanLyPhongMach2.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -113,7 +114,7 @@ namespace QuanLyPhongMach2
             txtTenDangNhap.Text = "";
             btnThem.Enabled = true;
             lblThongBao.Text = "";
-            dtpNgaySinh.Value = new DateTime(1990,1,1);
+            dtpNgaySinh.Value = new DateTime(1990, 1, 1);
         }
 
         private void QuanLyNguoiDung_Load(object sender, EventArgs e)
@@ -264,43 +265,31 @@ namespace QuanLyPhongMach2
                     {
                         if (TenDangNhap.Trim() != "")
                         {
-                            if (MK.Trim() != "")
+                            if (DateTime.Compare(NgaySinh, DateTime.Now) <= 0)
                             {
-                                if (DateTime.Compare(NgaySinh, DateTime.Now) <= 0)
+                                try
                                 {
-                                    try
-                                    {
-                                        // DateTime ns = DateTime.Parse(NgaySinh);
-                                        NguoiDung.CapNhatThongTin(TenDangNhap, TenND, NgaySinh, GioiTinh, DiaChi, SDT);
-                                        LoadData();
-                                        lblThongBao.ForeColor = Color.Green;
-                                        lblThongBao.Text = "Cập nhập người dùng thành công!";
-                                        tb.stt(lblThongBao);
-                                    }
-                                    catch
-                                    {
-                                        lblThongBao.ForeColor = Color.Red;
-                                        lblThongBao.Text = "Ngày sinh không hợp lệ";
-                                        tb.stt(lblThongBao);
-                                        dtpNgaySinh.Focus();
-                                    }
+                                    // DateTime ns = DateTime.Parse(NgaySinh);
+                                    NguoiDung.CapNhatThongTin(TenDangNhap, TenND, NgaySinh, GioiTinh, DiaChi, SDT);
+                                    LoadData();
+                                    lblThongBao.ForeColor = Color.Green;
+                                    lblThongBao.Text = "Cập nhập người dùng thành công!";
+                                    tb.stt(lblThongBao);
                                 }
-                                else
+                                catch
                                 {
                                     lblThongBao.ForeColor = Color.Red;
-                                    lblThongBao.ForeColor = Color.Red;
-                                    lblThongBao.Text = "Lỗi ngày sinh";
+                                    lblThongBao.Text = "Ngày sinh không hợp lệ";
                                     tb.stt(lblThongBao);
                                     dtpNgaySinh.Focus();
                                 }
-
                             }
                             else
                             {
                                 lblThongBao.ForeColor = Color.Red;
-                                lblThongBao.Text = "Bạn chưa nhập mật khẩu";
-                                txtMatKhau.Focus();
+                                lblThongBao.Text = "Lỗi ngày sinh";
                                 tb.stt(lblThongBao);
+                                dtpNgaySinh.Focus();
                             }
                         }
                         else
@@ -367,5 +356,104 @@ namespace QuanLyPhongMach2
                 XoaTrang();
             }
         }
+
+        #region
+        public string Add(string TenND, DateTime NgaySinh, bool GioiTinh, string DiaChi, string SDT, string TenDangNhap, string MatKhau, string ChucVu)
+        {
+            if (TenND.Trim() != "")
+            {
+                if (TenDangNhap.Trim() != "")
+                {
+                    if (MatKhau.Trim() != "")
+                    {
+                        if (DateTime.Compare(NgaySinh, DateTime.Now) <= 0)
+                        {
+                            try
+                            {
+                                NguoiDung.ThemNguoiDung(TenND, NgaySinh, (GioiTinh) ? 1 : 0, DiaChi, SDT, TenDangNhap, MatKhau, ChucVu);
+                                return "successed";
+                            }
+                            catch
+                            {
+                                return "failed";
+                            }
+                        }
+                        else
+                        {
+                            return "failed";
+                        }
+                    }
+                    else
+                    {
+                        return "failed";
+                    }
+                }
+                else
+                {
+                    return "failed";
+                }
+            }
+            else
+            {
+                return "failed";
+            }
+        }
+
+        public string Edit(string TenND, DateTime NgaySinh, bool GioiTinh, string DiaChi, string SDT, string TenDangNhap, string MatKhau, string ChucVu)
+        {
+            if (TenND.Trim() != "")
+            {
+                if (TenDangNhap.Trim() != "")
+                {
+                    if (DateTime.Compare(NgaySinh, DateTime.Now) <= 0)
+                    {
+                        try
+                        {
+                            NguoiDung.CapNhatThongTin(TenDangNhap, TenND, NgaySinh, (GioiTinh) ? 1 : 0, DiaChi, SDT);
+                            return "successed";
+                        }
+                        catch
+                        {
+                            return "failed";
+                        }
+                    }
+                    else
+                    {
+                        return "failed";
+                    }
+                }
+                else
+                {
+                    return "failed";
+                }
+            }
+            else
+            {
+                return "failed";
+            }
+        }
+
+        public string Delete(string TenDangNhap, string ChucVu)
+        {
+            if (ChucVu != "Admin")
+            {
+                try
+                {
+                    NguoiDung.XoaNguoiDung(TenDangNhap);
+                    return "successed";
+                }
+                catch
+                {
+                    return "failed";
+                }
+            }
+            else
+                return "failed";
+        }
+
+
+        #endregion
+
+
     }
 }

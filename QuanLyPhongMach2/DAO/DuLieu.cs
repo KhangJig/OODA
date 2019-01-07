@@ -12,7 +12,8 @@ namespace QuanLyPhongMach2.DAO
     public class DuLieu
     {
         SqlConnection conn;
-        public static string constring = "Data Source="+ Environment.MachineName +";Initial Catalog=QLPM;Integrated Security=True";
+
+        public static string constring = "Data Source=" + Environment.MachineName + ";Initial Catalog=QLPM;Integrated Security=True";
 
         public bool MoKetNoi()
         {
@@ -104,15 +105,11 @@ namespace QuanLyPhongMach2.DAO
                 constring = connStr;
         }
 
-
-
-
-
         //Lấy dữ liệu câu truy vấn sqlString
         public SqlDataReader LayDuLieu(string sqlString)
         {
             SqlCommand cmd = new SqlCommand(sqlString, conn);
-            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             SqlDataReader dr = cmd.ExecuteReader();
             return dr;
         }
@@ -121,9 +118,8 @@ namespace QuanLyPhongMach2.DAO
         public int CapNhatDuLieu(string sqlString)
         {
             SqlCommand cmd = new SqlCommand(sqlString, conn);
-            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandType = CommandType.Text;
             int ret = cmd.ExecuteNonQuery();
-            DongKetNoi();
             return ret;
         }
     }

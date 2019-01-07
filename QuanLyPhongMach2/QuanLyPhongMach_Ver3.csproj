@@ -113,11 +113,11 @@
     <Compile Include="DTO\ChiTietPhieuKham.cs" />
     <Compile Include="DTO\ChiTietThuoc.cs" />
     <Compile Include="DTO\ChiTietToaThuoc.cs" />
-    <Compile Include="frmBaoCaoDoanhThuTheoNgay.cs">
+    <Compile Include="frmBaoCaoDoanhThuTheoThang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBaoCaoDoanhThuTheoNgay.Designer.cs">
-      <DependentUpon>frmBaoCaoDoanhThuTheoNgay.cs</DependentUpon>
+    <Compile Include="frmBaoCaoDoanhThuTheoThang.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhThuTheoThang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBaoCaoSuDungThuoc.cs">
       <SubType>Form</SubType>
@@ -228,8 +228,8 @@
       <DependentUpon>rptBaoCaoSuDungThuoc.cs</DependentUpon>
     </Compile>
     <Compile Include="StandardWord.cs" />
-    <EmbeddedResource Include="frmBaoCaoDoanhThuTheoNgay.resx">
-      <DependentUpon>frmBaoCaoDoanhThuTheoNgay.cs</DependentUpon>
+    <EmbeddedResource Include="frmBaoCaoDoanhThuTheoThang.resx">
+      <DependentUpon>frmBaoCaoDoanhThuTheoThang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoSuDungThuoc.resx">
       <DependentUpon>frmBaoCaoSuDungThuoc.cs</DependentUpon>

@@ -37,5 +37,21 @@ namespace QuanLyPhongMach2
             DuLieu.SetConn(connString);
             this.Close();
         }
+
+        #region UINT TEST
+        public string ConnectionString(string severName)
+        {
+            string connString = @"Data Source=" + severName + @";Initial Catalog=QLPM;Integrated Security=True";
+            DuLieu duLieu = new DuLieu();
+            if (!duLieu.MoKetNoi(connString))
+            {
+                return "failed";
+            }
+            else
+            {
+                return "successed";
+            }
+        }
+        #endregion
     }
 }

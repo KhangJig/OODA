@@ -344,7 +344,7 @@ namespace QuanLyPhongMach2
             bool _IsActive = false;
             foreach (Form form in Application.OpenForms.OfType<Form>().ToList())
             {
-                if (form.GetType() == typeof(frmBaoCaoDoanhThuTheoNgay))
+                if (form.GetType() == typeof(frmBaoCaoDoanhThuTheoThang))
                 {
                     form.Activate();
                     _IsActive = true;
@@ -352,7 +352,7 @@ namespace QuanLyPhongMach2
             }
             if (!_IsActive)
             {
-                frmBaoCaoDoanhThuTheoNgay frm = new frmBaoCaoDoanhThuTheoNgay();
+                frmBaoCaoDoanhThuTheoThang frm = new frmBaoCaoDoanhThuTheoThang();
                 frm.MdiParent = this;
                 frm.Show();
             }

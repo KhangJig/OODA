@@ -67,10 +67,9 @@
             this.label3.Location = new System.Drawing.Point(58, 163);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(322, 60);
+            this.label3.Size = new System.Drawing.Size(334, 100);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Nhóm 16:   \r\n                    15520328   -      Nguyễn Đức Kế\r\n               " +
-    "     15520338   -      Lê Dương Khang";
+            this.label3.Text = resources.GetString("label3.Text");
             // 
             // label4
             // 

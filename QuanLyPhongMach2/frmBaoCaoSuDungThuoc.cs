@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace QuanLyPhongMach2
         public frmBaoCaoSuDungThuoc()
         {
             InitializeComponent();
+            lblThongBao.Text = "";
         }
 
         //Thang, nam mặc định khi load lên form là tháng, năm hiện tại
@@ -60,13 +62,62 @@ namespace QuanLyPhongMach2
 
         private void btnXemBaoCao_Click(object sender, EventArgs e)
         {
+            var tb = new HideNotifications();
             cbxThang.Text = thang.ToString();
             numNam.Value = nam;
-            rptBaoCaoSuDungThuoc report = new rptBaoCaoSuDungThuoc();
-            report.DataSource = BaoCaoThuoc.LayDuLieu(thang, nam);
-            report.BinData();
-            ReportPrintTool tool = new ReportPrintTool(report);
-            report.ShowPreviewDialog();
+ 
+
+            if (nam <= DateTime.Now.Year)
+            {
+                if (thang <= DateTime.Now.Month)
+                {
+                    rptBaoCaoSuDungThuoc report = new rptBaoCaoSuDungThuoc();
+                    report.DataSource = BaoCaoThuoc.LayDuLieu(thang, nam);
+                    report.BinData();
+                    ReportPrintTool tool = new ReportPrintTool(report);
+                    report.ShowPreviewDialog();
+                }
+                else
+                {
+                    lblThongBao.ForeColor = Color.Red;
+                    lblThongBao.Text = "Tháng không tồn tại";
+                    tb.stt(lblThongBao);
+                }
+            }
+            else
+            {
+
+                lblThongBao.ForeColor = Color.Red;
+                lblThongBao.Text = "Năm không tồn tại";
+                tb.stt(lblThongBao);
+                numNam.Focus();
+            }
+        }
+
+        #region UNIT TEST
+        public string Report(int month, int year)
+        {
+            if (year <= DateTime.Now.Year)
+            {
+                if (month <= DateTime.Now.Month)
+                {
+                    return "successed";
+                }
+                else
+                    return "failed";
+            }
+            else
+                return "failed";
+        }
+        #endregion
+
+        private void numNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar) || char.IsNumber(e.KeyChar))
+            {
+                return;
+            }
+            e.Handled = true;
         }
     }
 }

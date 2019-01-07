@@ -145,6 +145,31 @@ namespace QuanLyPhongMach2
             frmServerName obj = new frmServerName();
             obj.ShowDialog();
         }
+
+        #region UNIT TEST
+        public string Login(string name, string pass)
+        {
+            if (name != "" && pass != "")
+            {
+                SqlConnection conn = dl.Connect();
+                string sql = "select MaND, TenDangNhap,ChucVu from NguoiDung where TenDangNhap = '" + name + "' and MatKhau = '" + pass + "'";
+                DataTable dt = NguoiDung.GetDataTable(conn, sql);
+                if (dt.Rows.Count > 0)
+                {
+                    return "successed";
+                }
+                else
+                {
+                    return "failed";
+                }
+            }
+            else
+            {
+                return "failed";
+                
+            }
+        }
+        #endregion
     }
 
 }
