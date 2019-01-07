@@ -59,6 +59,7 @@
     <Compile Include="Test_frmCapNhatThongTinND.cs" />
     <Compile Include="Test_frmDanhSachBenhNhan.cs" />
     <Compile Include="Test_frmDanhSachKhamBenh.cs" />
+    <Compile Include="Test_frmDoiMatKhau.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -59,7 +59,7 @@ namespace QuanLyPhongMach2
                 {
                     if (NguoiDung.DoiMatKhau(PhanQuyenNguoiDung.TenDangNhap, MKMoi, MKCu) > 0)
                     {
-                        
+
                         MessageBox.Show("Đổi mật khẩu thành công");
 
                         this.Close();
@@ -83,5 +83,32 @@ namespace QuanLyPhongMach2
             this.Close();
         }
         #endregion
+
+        public string ChangePassword(string TenDangNhap, string MatKhauCu, string MatKhauMoi, string NhapLaiMatKhauMoi)
+        {
+            if (MatKhauCu != "" && MatKhauMoi != "" && NhapLaiMatKhauMoi != "")
+            {
+                if (MatKhauMoi == NhapLaiMatKhauMoi)
+                {
+                    if (NguoiDung.DoiMatKhau(TenDangNhap, MatKhauMoi, MatKhauCu) > 0)
+                    {
+                        return "successed";
+                    }
+                    else
+                    {
+                        return "failed";
+                    }
+                }
+                else
+                {
+                    return "failed";
+                }
+
+            }
+            else
+            {
+                return "failed";
+            }
+        }
     }
 }
