@@ -23,7 +23,7 @@ namespace QuanLyPhongMach2
 
         private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ( char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar) )
+            if (char.IsNumber(e.KeyChar) || char.IsControl(e.KeyChar))
             {
                 return;
             }
@@ -32,7 +32,7 @@ namespace QuanLyPhongMach2
 
         private void txtTenNguoiDung_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ( char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
+            if (char.IsLetter(e.KeyChar) || char.IsWhiteSpace(e.KeyChar) || char.IsControl(e.KeyChar))
             {
                 return;
             }
@@ -64,7 +64,7 @@ namespace QuanLyPhongMach2
         {
             var tb = new HideNotifications();
             var str = new StandardWord();
-            
+
             //Lấy các giá trị từ các textbox
             string TenND = str.Standard_Word(txtTenNguoiDung.Text);
             string DiaChi = txtDiaChi.Text;
@@ -75,37 +75,19 @@ namespace QuanLyPhongMach2
                 GioiTinh = 1;
             else
                 GioiTinh = 0;
-            if (TenND.Trim() != "")//Cắt khoảng trắng để kiêm tra sự đúng đắn của dữ liệu nhập vào. tránh trường hợp người dùng nhập toàn khoảng trắng
+            if (DateTime.Compare(DateTime.Now, dtpNgaySinh.Value) >= 0)
             {
-                    if (DiaChi.Trim() != "")
-                    {
-                    if (DateTime.Compare(DateTime.Now, dtpNgaySinh.Value) >= 0)
-                        {
-                            //DateTime ns = DateTime.Parse(NgaySinh);//Chuyền kiểu qua DateTime để bắt lỗi cho ngaysinh người dùng nhập
-                            NguoiDung.CapNhatThongTin(PhanQuyenNguoiDung.TenDangNhap, TenND, NgaySinh, GioiTinh, DiaChi, SDT);
-                            MessageBox.Show("Cập nhập thành công!");
-                            this.Close();
+                //DateTime ns = DateTime.Parse(NgaySinh);//Chuyền kiểu qua DateTime để bắt lỗi cho ngaysinh người dùng nhập
+                NguoiDung.CapNhatThongTin(PhanQuyenNguoiDung.TenDangNhap, TenND, NgaySinh, GioiTinh, DiaChi, SDT);
+                MessageBox.Show("Cập nhập thành công!");
+                this.Close();
 
-                        }
-                        else
-                        {
-                            lblThongBao.Text = "Ngày sinh không hợp lệ";
-                            tb.stt(lblThongBao);
-                            dtpNgaySinh.Focus();
-                        }
-                    }
-                    else
-                    {
-                        lblThongBao.Text = "Vui lòng nhập địa chỉ";
-                        tb.stt(lblThongBao);
-                        txtDiaChi.Focus();
-                    }
             }
             else
             {
-                lblThongBao.Text = "Vui lòng nhập tên người dùng";
+                lblThongBao.Text = "Ngày sinh không hợp lệ";
                 tb.stt(lblThongBao);
-                txtTenNguoiDung.Focus();
+                dtpNgaySinh.Focus();
             }
         }
 
@@ -114,5 +96,30 @@ namespace QuanLyPhongMach2
             this.Close();
         }
         #endregion
+
+        public string Update(string TenND, DateTime NgaySinh, bool GioiTinh, string DiaChi, string SDT, string TenDangNhap, string MatKhau, string ChucVu)
+        {
+            if (DateTime.Compare(NgaySinh, DateTime.Now) <= 0)
+            {
+                try
+                {
+                    NguoiDung.CapNhatThongTin(PhanQuyenNguoiDung.TenDangNhap, TenND, NgaySinh, GioiTinh?1:0, DiaChi, SDT);
+                    if (NguoiDung.LayThongTin(TenDangNhap).TenND == TenND && NguoiDung.LayThongTin(TenDangNhap).NgaySinh == NgaySinh && NguoiDung.LayThongTin(TenDangNhap).GioiTinh == GioiTinh && NguoiDung.LayThongTin(TenDangNhap).DiaChi == DiaChi && NguoiDung.LayThongTin(TenDangNhap).SDT == SDT)
+                    {
+                        return "successed";
+                    }
+                    else return "failed";
+                }
+                catch
+                {
+                    return "failed";
+                }
+            }
+            else
+            {
+                return "failed";
+            }
+        }
+
     }
 }

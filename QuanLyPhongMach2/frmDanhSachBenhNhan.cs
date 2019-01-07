@@ -83,5 +83,17 @@ namespace QuanLyPhongMach2
             dgvDSBenhNhan.Columns["LoaiBenh"].Width = 200;
             dgvDSBenhNhan.Columns["TrieuChung"].Width = 350;
         }
+        public string Search(string name)
+        {
+            if (name != "")
+            {
+                if (PhieuKham.DSKhamBenh(name).Count() != 0)
+                    return "successed";
+                else
+                    return "failed";
+            }
+            else
+                return "failed";
+        }
     }
 }

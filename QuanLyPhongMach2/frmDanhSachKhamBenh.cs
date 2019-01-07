@@ -277,5 +277,57 @@ namespace QuanLyPhongMach2
             LoadData();
         }
 
+        public string AddBN(string TenBN, DateTime NgaySinh, string DiaChi, bool GioiTinh)
+        {
+            int MaBN;
+            if (TenBN!="")
+            {
+                if (DiaChi != "")
+                {
+                    if (DateTime.Compare(NgaySinh, DateTime.Now) <= 0)
+                    {
+                        if (BenhNhan.KTBenhNhan(TenBN, NgaySinh, out MaBN) == true)
+                        {
+                            BenhNhan.ThemBenhNhan(TenBN, GioiTinh ? 1 : 0, NgaySinh, DiaChi);
+                            return "successed";
+                        }
+                        else
+                            return "failed";
+                    }
+                    else return "failed";
+                }
+                else
+                    return "failed";
+            }
+            else
+                return "failed";
+        }
+        public string DeleteBN(int MaBN)
+        {
+            if (MaBN > 0)
+            {
+                BenhNhan.XoaBN(MaBN);
+                return "successed";
+            }
+            else
+                return "failed";
+        }
+        public string EditBN(int MaBN, string TenBN, DateTime NgaySinh, string DiaChi, bool GioiTinh)
+        {
+
+            if (MaBN > 0)
+            {
+                if (DateTime.Compare(NgaySinh, DateTime.Now) <= 0)
+                { 
+                    BenhNhan.SuaTTBenhNhan(MaBN, TenBN, GioiTinh ? 1 : 0, NgaySinh, DiaChi);
+                    return "successed";
+                }
+                else
+                    return "failed";
+            }
+            else
+                return "failed";
+        }
+
     }
 }

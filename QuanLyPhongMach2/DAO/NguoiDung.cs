@@ -58,6 +58,23 @@ namespace QuanLyPhongMach2.DAO
             }
             return nd;
         }
+
+        public static List<ChiTietNguoiDung> DSNguoiDungTheoTen(string TenDN)
+        {
+            List<ChiTietNguoiDung> nd = new List<ChiTietNguoiDung>();
+            DuLieu dl = new DuLieu();
+            if (dl.MoKetNoi())
+            {
+                string sqlString = "select TenND as 'Họ tên' from NguoiDung where TenDangNhap = N'" + TenDN + "'";
+                SqlDataReader dr = dl.LayDuLieu(sqlString);
+                while (dr.Read())
+                {
+                    nd.Add(new ChiTietNguoiDung(int.Parse(dr["STT"].ToString()), dr["TenDangNhap"].ToString(), dr["ChucVu"].ToString(), dr["TenND"].ToString(), (DateTime)dr["NgaySinh"], (bool)dr["GioiTinh"], dr["DiaChi"].ToString(), dr["SDT"].ToString()));
+                }
+                dl.DongKetNoi();
+            }
+            return nd;
+        }
         //Lấy dữ liệu của người dùng
         public static List<ChiTietNguoiDung> LayDSNguoiDung()
         {

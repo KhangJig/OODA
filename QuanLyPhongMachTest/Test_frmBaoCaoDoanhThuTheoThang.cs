@@ -5,7 +5,7 @@ using QuanLyPhongMach2;
 namespace QuanLyPhongMachTest
 {
     [TestClass]
-    public class Test_BaoCaoDoanhThuTheoThang
+    public class Test_frmBaoCaoDoanhThuTheoThang
     {
         [TestMethod]
         public void TestViewReport()

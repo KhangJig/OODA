@@ -410,7 +410,11 @@ namespace QuanLyPhongMach2
                         try
                         {
                             NguoiDung.CapNhatThongTin(TenDangNhap, TenND, NgaySinh, (GioiTinh) ? 1 : 0, DiaChi, SDT);
-                            return "successed";
+                            if (NguoiDung.LayThongTin(TenDangNhap).TenND == TenND && NguoiDung.LayThongTin(TenDangNhap).NgaySinh == NgaySinh && NguoiDung.LayThongTin(TenDangNhap).GioiTinh == GioiTinh && NguoiDung.LayThongTin(TenDangNhap).DiaChi == DiaChi && NguoiDung.LayThongTin(TenDangNhap).SDT == SDT)
+                            {
+                                return "successed";
+                            }
+                            else return "failed";
                         }
                         catch
                         {
@@ -440,7 +444,10 @@ namespace QuanLyPhongMach2
                 try
                 {
                     NguoiDung.XoaNguoiDung(TenDangNhap);
-                    return "successed";
+                    if (NguoiDung.DSNguoiDungTheoTen(TenDangNhap).Count() == 0)
+                        return "successed";
+                    else
+                        return "failed";
                 }
                 catch
                 {

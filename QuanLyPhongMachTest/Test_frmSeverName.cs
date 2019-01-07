@@ -5,7 +5,7 @@ using QuanLyPhongMach2;
 namespace QuanLyPhongMachTest
 {
     [TestClass]
-    public class Test_ConnctionString
+    public class Test_frmSeverName
     {
         [TestMethod]
         public void TestConnectionString()

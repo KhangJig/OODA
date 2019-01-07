@@ -7,7 +7,7 @@ using QuanLyPhongMach2;
 namespace QuanLyPhongMachTest
 {
     [TestClass]
-    public class Test_NguoiDung
+    public class Test_frmQuanLyNguoiDung
     {
 
         [TestInitialize]
@@ -36,7 +36,7 @@ namespace QuanLyPhongMachTest
             frmQuanLyNguoiDung frm = new frmQuanLyNguoiDung();
             
             //Xoá người dùng thành công
-            Assert.AreEqual("successed", frm.Delete("khang1234", "Nhân Viên"));
+            Assert.AreEqual("successed", frm.Delete("123", "Nhân Viên"));
 
             //Không xoá được người dùng là admin
             Assert.AreEqual("failed", frm.Delete("khang123", "Admin"));
