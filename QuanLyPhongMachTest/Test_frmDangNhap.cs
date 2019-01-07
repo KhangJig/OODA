@@ -4,7 +4,7 @@ using QuanLyPhongMach2;
 namespace QuanLyPhongMachTest
 {
     [TestClass]
-    public class Test_Login
+    public class Test_frmDangNhap
     {
         [TestMethod]
         public void TestLogin()

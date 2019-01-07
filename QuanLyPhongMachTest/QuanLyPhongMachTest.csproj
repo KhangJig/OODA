@@ -50,12 +50,15 @@
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test_NguoiDung.cs" />
+    <Compile Include="Test_frmQuanLyNguoiDung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test_Login.cs" />
-    <Compile Include="Test_ConnctionString.cs" />
-    <Compile Include="Test_BaoCaoSuDungThuoc.cs" />
-    <Compile Include="Test_BaoCaoDoanhThuTheoThang.cs" />
+    <Compile Include="Test_frmDangNhap.cs" />
+    <Compile Include="Test_frmSeverName.cs" />
+    <Compile Include="Test_frmBaoCaoSuDungThuoc.cs" />
+    <Compile Include="Test_frmBaoCaoDoanhThuTheoThang.cs" />
+    <Compile Include="Test_frmCapNhatThongTinND.cs" />
+    <Compile Include="Test_frmDanhSachBenhNhan.cs" />
+    <Compile Include="Test_frmDanhSachKhamBenh.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
